@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "admin4j.alert.ding-talk.assess-token",
+      "type": "java.lang.String",
+      "description": "钉钉的 assessToken."
+    },
+    {
+      "name": "admin4j.alert.ding-talk.secret",
+      "type": "java.lang.String",
+      "description": "钉钉的  ding-talk.secret."
+    }
+  ]
+}
