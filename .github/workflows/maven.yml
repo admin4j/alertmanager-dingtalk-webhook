@@ -22,6 +22,7 @@ env:
   REGISTRY: ''
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  TAG: ${{ GITHUB_REF_NAME == 'master' ? 'latest' ：GITHUB_REF_NAME }}
 
 jobs:
   build:
@@ -57,7 +58,8 @@ jobs:
       id: meta
       uses: docker/metadata-action@v4
       with:
-          images: ${{ env.IMAGE_NAME }}    
+          images: ${{ env.IMAGE_NAME }}
+          tags: ${{TAG}}
    # 推送
     - name: Build and push Docker image
       uses: docker/build-push-action@v3
