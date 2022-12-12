@@ -59,7 +59,7 @@ jobs:
       uses: docker/metadata-action@v4
       with:
           images: ${{ env.IMAGE_NAME }}
-          tags: ${{TAG}}
+          tags: ${{env.TAG}}
    # 推送
     - name: Build and push Docker image
       uses: docker/build-push-action@v3
