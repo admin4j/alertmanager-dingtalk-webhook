@@ -41,7 +41,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ${{env.IMAGE_NAME}}
     - name: echo
-      run: echo ${{ github }}
+      run: echo ${{ github.branche }}
       
     # 登录  
     - name: Log into registry ${{ env.REGISTRY }}
@@ -57,7 +57,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v4
       with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}    
+          images: ${{ env.IMAGE_NAME }}    
    # 推送
     - name: Build and push Docker image
       uses: docker/build-push-action@v3
