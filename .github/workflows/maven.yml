@@ -41,7 +41,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ${{env.IMAGE_NAME}}
     - name: echo
-      run: echo ${ GITHUB_REF_NAME }
+      run: echo $GITHUB_REF_NAME
       
     # 登录  
     - name: Log into registry ${{ env.REGISTRY }}
