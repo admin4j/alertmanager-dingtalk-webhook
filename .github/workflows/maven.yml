@@ -51,8 +51,8 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-     # Extract metadata (tags, labels) for Docker
-      # https://github.com/docker/metadata-action
+    # Extract metadata (tags, labels) for Docker
+    # https://github.com/docker/metadata-action
     - name: Extract Docker metadata
       id: meta
       uses: docker/metadata-action@v4
@@ -61,6 +61,8 @@ jobs:
           tags: |
             # set latest tag for default branch
             type=raw,value=latest,enable={{is_default_branch}}
+            # tag event
+            type=ref,enable=true,priority=600,prefix=,suffix=,event=tag
    # 推送
     - name: Build and push Docker image
       uses: docker/build-push-action@v3
