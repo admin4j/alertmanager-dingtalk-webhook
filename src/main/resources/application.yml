@@ -6,6 +6,6 @@ spring:
 admin4j:
   alert:
     ding-talk:
-      assess-token: "d54bd0d41decb444d8e716fa661c03233d10f75559a0041c60148a1de8bb8028"
-      secret: "SEC7f5baedc3bc637942041077a6e5aeb4275cf403ad3c057e75b0ed8921dc26625"
+      assess-token: ${dingtalk_assessToken:d54bd0d41decb444d8e716fa661c03233d10f75559a0041c60148a1de8bb8028}
+      secret: ${dingTalk_secret:SEC7f5baedc3bc637942041077a6e5aeb4275cf403ad3c057e75b0ed8921dc26625}
 
