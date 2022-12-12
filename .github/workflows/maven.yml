@@ -41,7 +41,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ${{env.IMAGE_NAME}}
     - name: echo
-      run: echo ${{ secrets.DOCKER_USERNAME }}
+      run: echo ${{ github }}
       
     # 登录  
     - name: Log into registry ${{ env.REGISTRY }}
@@ -51,7 +51,13 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-       
+     # Extract metadata (tags, labels) for Docker
+      # https://github.com/docker/metadata-action
+    - name: Extract Docker metadata
+      id: meta
+      uses: docker/metadata-action@v4
+      with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}    
    # 推送
     - name: Build and push Docker image
       uses: docker/build-push-action@v3
