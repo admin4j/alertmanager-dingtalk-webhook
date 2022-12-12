@@ -22,7 +22,7 @@ env:
   REGISTRY: ''
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
-  TAG: ${{ $GITHUB_REF_NAME == 'master' ? 'latest' ：$GITHUB_REF_NAME }}
+  TAG:  $GITHUB_REF_NAME == 'master' ? 'latest' ：$GITHUB_REF_NAME
 
 jobs:
   build:
