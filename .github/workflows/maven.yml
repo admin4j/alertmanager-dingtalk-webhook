@@ -44,8 +44,8 @@ jobs:
       uses: docker/login-action@v2
       with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ repositorys.DOCKER_USERNAME }}
+          password: ${{ repositorys.DOCKER_PASSWORD }}
     # 设置 image 名称
     - name: Extract metadata (tags, labels) for Docker
       id: meta
