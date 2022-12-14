@@ -2,6 +2,14 @@ spring:
   application:
     name: admin4j-alert
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - prometheus
+          - health
+
 
 admin4j:
   alert:
