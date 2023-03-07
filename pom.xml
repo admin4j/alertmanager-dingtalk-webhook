@@ -19,6 +19,7 @@
             <groupId>com.admin4j</groupId>
             <artifactId>common-prometheus-starter</artifactId>
         </dependency>
+        <!--用于 SpringBoot 生成配置 metadata 文件-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
