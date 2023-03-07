@@ -18,4 +18,9 @@ public class AlertProperties {
      * 钉钉认证
      */
     private DingTalkConfig dingTalk;
+
+    /**
+     * 企业微信的 webhookUrl
+     */
+    private String qyWeiXinWebhookUrl;
 }
